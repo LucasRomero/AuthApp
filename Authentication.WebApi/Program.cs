@@ -1,5 +1,11 @@
+using Authentication.Application.Authentication;
 using Authentication.Core.Entities;
+using Authentication.Infrastructure;
+using Authentication.Infrastructure.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 
@@ -77,6 +83,10 @@ var connectionString = builder.Configuration.GetConnectionString("inversiondb");
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
     option.UseSqlServer(connectionString)
 );
+
+// DI
+
+builder.Services.AddSingleton<ITokenProvider, TokenProvider>();
 
 // Add services to the container.
 

@@ -1,24 +1,10 @@
-using Application.Authentication;
-using Application.Features.Activos.Create;
-using Application.Features.Activos.Delete;
-using Application.Features.Activos.Get;
-using Application.Features.Activos.GetById;
-using Application.Features.Ordenes.Create;
-using Application.Features.Ordenes.Delete;
-using Application.Features.Ordenes.Get;
-using Application.Features.Ordenes.GetById;
-using Core.Entities;
-using MediatR;
+using Authentication.Application.Authentication;
+using Authentication.Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Web.Resource;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
-namespace Web.Api.Controllers
+namespace Authentication.WebApi.Controllers
 {
     
     [ApiController]
